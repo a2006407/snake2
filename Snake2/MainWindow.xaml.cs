@@ -34,6 +34,8 @@ namespace Snake2
 
         private void Timer_Tick(object sender, EventArgs e)
         {
+            canvas.Children.Clear();
+
             int tamanyXCasella = (int)(canvas.ActualWidth / SnakeGame.X_SIZE);
             int tamanyYCasella = (int)(canvas.ActualHeight / SnakeGame.Y_SIZE);
 
@@ -47,6 +49,20 @@ namespace Snake2
             canvas.Children.Add(ellSerp);
             Canvas.SetTop(ellSerp, jocSerp.CapSerp.Y * tamanyYCasella );
             Canvas.SetLeft(ellSerp, jocSerp.CapSerp.X * tamanyXCasella );
+
+            
+
+            foreach (var item in jocSerp.pomes) {
+                Ellipse ellPoma = new Ellipse() {
+                    Fill = Brushes.Red,
+                    Width = tamanyXCasella,
+                    Height = tamanyYCasella
+                };
+                canvas.Children.Add(ellPoma);
+                
+            Canvas.SetTop(ellPoma, item.X* tamanyYCasella );
+            Canvas.SetLeft(ellPoma, item.Y * tamanyXCasella );
+            }
         }
 
         private void canvas_KeyDown(object sender, KeyEventArgs e)

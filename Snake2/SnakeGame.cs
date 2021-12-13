@@ -22,9 +22,18 @@ namespace Snake2
 
         Point capSerp = new Point(X_SIZE/2, 0);
         DireccioSnake direccio = DireccioSnake.Dreta;
+        public List<Point> pomes = new List<Point>();
+        private int NUMPOMES;
 
         public Point CapSerp { get => capSerp; set => capSerp = value; }
         public DireccioSnake Direccio { get => direccio; set => direccio = value; }
+
+        public SnakeGame() {
+            Random r = new Random();
+            for (int i = 0; i < NUMPOMES; i++) {
+                pomes.Add(new Point(r.Next(X_SIZE),r.Next(Y_SIZE)));
+            }
+        }
 
         internal void moure(DireccioSnake dir)
         {
