@@ -21,7 +21,7 @@ namespace Snake2
         public const int Y_SIZE = 5;
 
         Point capSerp = new Point(X_SIZE/2, 0);
-        DireccioSnake direccio = DireccioSnake.Dreta;
+        public DireccioSnake direccio = DireccioSnake.Dreta;
 
         public Point CapSerp { get => capSerp; set => capSerp = value; }
         public DireccioSnake Direccio { get => direccio; set => direccio = value; }
