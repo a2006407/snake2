@@ -51,7 +51,14 @@ namespace Snake2
 
         private void canvas_KeyDown(object sender, KeyEventArgs e)
         {
-            jocSerp.moure();
+            if (e.Key is Key.Up)
+                jocSerp.moure(DireccioSnake.Amunt);
+            else if (e.Key is Key.Down)
+                jocSerp.moure(DireccioSnake.Avall);
+            else if (e.Key is Key.Left)
+                jocSerp.moure(DireccioSnake.Esquerre);
+            else
+                jocSerp.moure(DireccioSnake.Dreta);
         }
     }
 }
